@@ -1,24 +1,31 @@
 .text
 main:
+    # * ler N
     li $v0, 5
     syscall
 
+    # * decrementa 1 de N, pois a primeira entrada vamos ler fora do loop, para ele já ser o maior
     move $s0, $v0 
     add $s0, $s0, -1
     
+    # * ler o atual maior
     li $v0, 5  
     syscall
     move $t1, $v0
     
     loop:
+        # * se N == 0, sai do loop
         beq $s0, $zero, saida 
 
+        # * lê um numero
         li $v0, 5  
         syscall
         move $t0, $v0
 
+        # * ser numero >= maior: maior = numero
         bge $t0, $t1, maior
 
+        # * N--
         addi $s0, $s0, -1
         j loop
 
@@ -32,6 +39,8 @@ saida:
     syscall
 
 maior: 
+    # maior = numero
     move $t1, $t0
+    # N--
     addi $s0, $s0, -1
     j loop
