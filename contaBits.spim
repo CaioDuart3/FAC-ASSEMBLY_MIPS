@@ -31,13 +31,13 @@ contaBits:
         # * se o N != continua   (N é decrementado a cada iteração com srl até virar 0)
         beq $t0, $zero, saida
 
-        # * and pega o bit menos signicativo e multiplica por 1 pra dar ele mesmo
+        # * multiplica bit a bit do numero, todos zeram, menos o primeiro bit, resultando no menos significativo em $t1, sendo ele 0 ou 1
         andi $t1, $t0, 1
 
         # * se o bit for != 0, logo é 1 e conta.
         bne $t1, $zero, contador 
 
-        # * passa os bits de N para direita de 1 em 1
+        # * passa os bits de N para direita de 1 em 1, reduzindo-o a zero quando o loop acabar
         srl $t0, $t0, 1
 
         j loop
