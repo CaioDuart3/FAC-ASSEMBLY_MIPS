@@ -22,7 +22,7 @@ main:
         syscall
         move $t0, $v0
 
-        # * ser numero >= maior: maior = numero
+        # * se numero >= maior: maior = numero
         bge $t0, $t1, maior
 
         # * N--
@@ -44,3 +44,14 @@ maior:
     # N--
     addi $s0, $s0, -1
     j loop
+
+
+
+
+
+slt reg1, re2, reg3
+
+bgt reg3, reg2, label >
+
+bge >=
+

@@ -1,8 +1,8 @@
 .data
 vetor: .word 13, 13, 13, 13, 13, 31, 31, 31, 31, 31, 31
-
 .text
 main:
+
     la $a0, vetor # * endereço do vetor
     li $a1, 11 # * tamanho do vetor
 
@@ -28,10 +28,10 @@ elemDistintos:
         beq $a1, $s0, return  
 
         # * $s1 = a[i+1] 
-        addi $s1, $a0, 4 
+        addi $s1, $a0, 4  # 0004 # i + 1
 
-        lw $a2, 0($a0) # $a2 = a[i]
-        lw $s2, 0($s1) # $s2 = a[i+1]
+        lw $a2, 0($a0) # $a2 = a[i]    # 0000
+        lw $s2, 0($s1) # $s2 = a[i+1]  # 0004
 
         # * se a[i] != a[i+1]: são distintos, logo contador++ 
         bne $a2,$s2, contador
