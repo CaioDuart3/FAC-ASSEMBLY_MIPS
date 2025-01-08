@@ -7,6 +7,8 @@
 # *passo5: se não rodou 31 vezes, volte para o passo 3 
 # *passo6: R[63...31] >> 1
 
+#sistema que opera com signed positivo.
+
 .text
 main:
     #lê o dividendo (numerador)

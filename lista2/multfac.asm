@@ -3,6 +3,8 @@
 # *passo3: P >> 1
 # *passo4: Se não exceder 32 iterações, volte ao passo 2.
 
+#sistema que opera com signed positivo.
+
 .text
 main:
     #lê M
